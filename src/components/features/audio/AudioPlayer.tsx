@@ -39,11 +39,11 @@ export const MiniPlayer: React.FC<MiniPlayerProps> = ({
         {/* Thumbnail */}
         <div className={styles.miniThumbnail}>
           <img src={track.thumbnail} alt="" />
-          <div className={styles.miniPlayBtn}>
-            <PlayButton size="sm" playing={isPlaying} onToggle={(e) => {
-              e.stopPropagation();
-              onPlayPause();
-            }} />
+          <div className={styles.miniPlayBtn} onClick={(e) => {
+            e.stopPropagation();
+            onPlayPause();
+          }}>
+            <PlayButton size="sm" playing={isPlaying} onToggle={() => onPlayPause()} />
           </div>
         </div>
 
