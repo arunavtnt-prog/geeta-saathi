@@ -14,6 +14,7 @@ export interface CardProps {
   onClick?: () => void;
   className?: string;
   animate?: boolean;
+  style?: React.CSSProperties;
 }
 
 export const Card: React.FC<CardProps> = ({
@@ -24,6 +25,7 @@ export const Card: React.FC<CardProps> = ({
   onClick,
   className = '',
   animate = true,
+  style,
 }) => {
   const cardClasses = [
     styles.card,
@@ -38,7 +40,7 @@ export const Card: React.FC<CardProps> = ({
     .join(' ');
 
   return (
-    <div className={cardClasses} onClick={onClick}>
+    <div className={cardClasses} onClick={onClick} style={style}>
       {children}
     </div>
   );
