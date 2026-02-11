@@ -1,0 +1,84 @@
+/**
+ * OTPInput Styles
+ * Large, accessible inputs for 40+ users
+ */
+
+.otpContainer {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.otpInput {
+  width: 52px;
+  height: 64px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-sand-dark);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: all var(--transition-base);
+  caret-color: var(--color-flame);
+}
+
+.otpInput:focus {
+  border-color: var(--color-flame);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+  transform: translateY(-2px);
+}
+
+.otpInputFocused {
+  border-color: var(--color-flame);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+}
+
+.otpInputError {
+  border-color: #C62828;
+  animation: shake 0.4s ease-in-out;
+}
+
+.otpInputError:focus {
+  border-color: #C62828;
+  box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.15);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.otpInput:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.otpInput::placeholder {
+  color: var(--color-sand-dark);
+  opacity: 0.5;
+}
+
+.errorMessage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: #C62828;
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .otpInput {
+    width: 60px;
+    height: 72px;
+    font-size: var(--text-4xl);
+  }
+}

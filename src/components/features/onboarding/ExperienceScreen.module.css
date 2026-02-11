@@ -1,0 +1,120 @@
+/**
+ * ExperienceScreen Styles
+ * Large, accessible option cards
+ */
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* === Options === */
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-sand-dark);
+  border-radius: var(--radius-xl);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+}
+
+.option:hover {
+  border-color: var(--color-flame);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.option:active {
+  transform: translateX(0);
+}
+
+.icon {
+  font-size: var(--text-4xl);
+  flex-shrink: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.titleText {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.desc {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+}
+
+/* === Skip === */
+
+.skip {
+  width: 100%;
+  padding: var(--space-3);
+  background: transparent;
+  border: none;
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.skip:hover {
+  color: var(--color-flame);
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+
+  .option {
+    padding: var(--space-6);
+  }
+
+  .icon {
+    font-size: var(--text-5xl);
+  }
+
+  .titleText {
+    font-size: var(--text-2xl);
+  }
+
+  .desc {
+    font-size: var(--text-lg);
+  }
+}

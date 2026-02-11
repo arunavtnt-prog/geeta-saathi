@@ -1,0 +1,104 @@
+/**
+ * OTPScreen Styles
+ * Clean, focused OTP entry experience
+ */
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.subtitle strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+/* === OTP Wrapper === */
+
+.otpWrapper {
+  position: relative;
+  margin-bottom: var(--space-8);
+}
+
+/* === Resend Section === */
+
+.resendSection {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.receiving {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+}
+
+.timer {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-flame);
+}
+
+.resendBtn {
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  border: 1.5px solid var(--color-flame);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-flame);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.resendBtn:hover:not(:disabled) {
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.resendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* === CTA === */
+
+.cta {
+  margin-bottom: var(--space-4);
+}
+
+/* === Help Text === */
+
+.helpText {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-mist);
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+}

@@ -1,0 +1,266 @@
+/**
+ * Button Component Styles
+ * Sacred, ritual-inspired interactions
+ */
+
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* === Variants === */
+
+.button.primary {
+  background: var(--color-flame);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.button.primary:hover:not(:disabled) {
+  background: var(--color-flame-muted);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  transform: translateY(-1px);
+}
+
+.button.primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+.button.secondary {
+  background: var(--color-deep);
+  color: white;
+  box-shadow: 0 4px 12px rgba(26, 35, 126, 0.3);
+}
+
+.button.secondary:hover:not(:disabled) {
+  background: var(--color-dusk);
+  box-shadow: 0 6px 20px rgba(26, 35, 126, 0.4);
+  transform: translateY(-1px);
+}
+
+.button.sacred {
+  background: linear-gradient(135deg, var(--color-flame) 0%, var(--color-ember) 100%);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(255, 107, 53, 0.4);
+}
+
+.button.sacred:hover:not(:disabled) {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.button.sacred::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.button.sacred:hover::before {
+  left: 100%;
+}
+
+.button.ghost {
+  background: transparent;
+  color: var(--color-flame);
+  border: 1.5px solid var(--color-flame);
+}
+
+.button.ghost:hover:not(:disabled) {
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.button.text {
+  background: transparent;
+  color: var(--color-ink-muted);
+  padding: 0;
+  border-radius: 0;
+}
+
+.button.text:hover:not(:disabled) {
+  color: var(--color-flame);
+}
+
+/* === Sizes === */
+
+.button.sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  min-height: 36px;
+}
+
+.button.md {
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-base);
+  min-height: 44px;
+}
+
+.button.lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: var(--text-lg);
+  min-height: 52px;
+}
+
+.button.icon {
+  padding: 0;
+  aspect-ratio: 1;
+  min-height: 44px;
+}
+
+/* === Full Width === */
+
+.button.fullWidth {
+  width: 100%;
+}
+
+/* === Loading State === */
+
+.button.loading .content {
+  opacity: 0.7;
+}
+
+.spinner {
+  display: inline-flex;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* === Icon Button === */
+
+.iconButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  background: var(--color-surface-dim);
+  color: var(--color-ink-muted);
+}
+
+.iconButton:hover {
+  background: var(--color-sand-dark);
+  color: var(--color-flame);
+}
+
+.iconButton.sacred {
+  background: var(--color-flame);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.iconButton.sacred:hover {
+  background: var(--color-flame-muted);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.05);
+}
+
+.iconButton.ghost {
+  background: transparent;
+  color: var(--color-ink-muted);
+}
+
+.iconButton.ghost:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.iconButton.icon-sm {
+  width: 36px;
+  height: 36px;
+}
+
+.iconButton.icon-md {
+  width: 44px;
+  height: 44px;
+}
+
+.iconButton.icon-lg {
+  width: 56px;
+  height: 56px;
+}
+
+/* === Play Button === */
+
+.playButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-flame);
+  color: white;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  overflow: visible;
+}
+
+.playGlow {
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  background: var(--color-flame);
+  opacity: 0;
+  filter: blur(16px);
+  transition: opacity var(--transition-base);
+  z-index: -1;
+}
+
+.playButton:hover {
+  transform: scale(1.05);
+}
+
+.playButton:hover .playGlow {
+  opacity: 0.4;
+}
+
+.playButton.playing {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.playButton.playing .playGlow {
+  opacity: 0.3;
+}
+
+.playButton.play-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.playButton.play-md {
+  width: 56px;
+  height: 56px;
+}
+
+.playButton.play-lg {
+  width: 72px;
+  height: 72px;
+}

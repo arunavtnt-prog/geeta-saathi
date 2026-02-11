@@ -1,0 +1,210 @@
+/**
+ * Card Component Styles
+ * Temple-inspired elevation and depth
+ */
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+/* === Variants === */
+
+.card.default {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-sand-dark);
+}
+
+.card.sacred {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.08) 0%, rgba(232, 93, 42, 0.04) 100%);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.card.deep {
+  background: linear-gradient(135deg, var(--color-deep) 0%, var(--color-midnight) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-surface-text);
+}
+
+.card.outlined {
+  background: transparent;
+  border: 1.5px solid var(--color-sand-dark);
+}
+
+/* === Elevation === */
+
+.card.none {
+  box-shadow: none;
+}
+
+.card.subtle {
+  box-shadow: var(--shadow-md);
+}
+
+.card.medium {
+  box-shadow: var(--shadow-lg);
+}
+
+.card.high {
+  box-shadow: var(--shadow-xl);
+}
+
+/* === Padding === */
+
+.card.none { padding: 0; }
+.card.sm { padding: var(--space-3); }
+.card.md { padding: var(--space-5); }
+.card.lg { padding: var(--space-6); }
+.card.xl { padding: var(--space-8); }
+
+/* === Interactive States === */
+
+.card.clickable {
+  cursor: pointer;
+}
+
+.card.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card.clickable:active {
+  transform: translateY(0);
+}
+
+/* === Animation === */
+
+.card.animate {
+  animation: slideUp var(--transition-slow) ease-out;
+}
+
+/* === Inner Sections === */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-sand-dark);
+}
+
+/* === Verse Card Specific === */
+
+.verseCard {
+  position: relative;
+}
+
+.verseCard::before {
+  content: '॥';
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  color: var(--color-flame);
+  opacity: 0.3;
+}
+
+.verseCard .reference {
+  font-size: var(--text-sm);
+  color: var(--color-mist);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.verseCard .sanskrit {
+  font-size: var(--text-xl);
+  color: var(--color-ink);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.verseCard.deep .sanskrit {
+  color: var(--color-surface-text);
+}
+
+.verseCard .translation {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  line-height: 1.6;
+  margin-bottom: var(--space-5);
+  font-style: italic;
+}
+
+.verseCard.deep .translation {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.verseCard .actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.iconButton {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: var(--color-flame);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.iconButton:hover {
+  background: var(--color-flame-muted);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.iconButton:active {
+  transform: scale(0.98);
+}
+
+.reflectButton {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--color-flame);
+  background: transparent;
+  color: var(--color-flame);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.reflectButton:hover {
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.reflectButton:active {
+  transform: scale(0.98);
+}

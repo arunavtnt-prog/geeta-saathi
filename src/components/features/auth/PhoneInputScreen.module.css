@@ -1,0 +1,135 @@
+/**
+ * PhoneInputScreen Styles
+ * Large, accessible phone input
+ */
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* === Input Group === */
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-sand-dark);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--transition-base);
+  margin-bottom: var(--space-4);
+}
+
+.inputGroup:focus-within {
+  border-color: var(--color-flame);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+}
+
+.countryCode {
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-ink-muted);
+  border-right: 1px solid var(--color-sand-dark);
+  user-select: none;
+}
+
+.phoneInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: 0.05em;
+  padding: var(--space-3);
+}
+
+.phoneInput::placeholder {
+  color: var(--color-sand-dark);
+  opacity: 0.6;
+}
+
+.phoneInput:focus {
+  outline: none;
+}
+
+.phoneInput:disabled {
+  opacity: 0.5;
+}
+
+.phoneInputError {
+  color: #C62828;
+}
+
+/* === Error Message === */
+
+.error {
+  font-size: var(--text-base);
+  color: #C62828;
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+/* === Info Box === */
+
+.infoBox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(26, 35, 126, 0.05);
+  border: 1px solid rgba(26, 35, 126, 0.1);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-8);
+}
+
+.infoIcon {
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* === CTA === */
+
+.cta {
+  margin-top: auto;
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+
+  .countryCode,
+  .phoneInput {
+    font-size: var(--text-3xl);
+  }
+}

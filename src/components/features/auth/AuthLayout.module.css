@@ -1,0 +1,209 @@
+/**
+ * AuthLayout Styles
+ * Full-screen layout with temple-inspired decorations
+ */
+
+.layout {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, var(--color-sand-light) 0%, var(--color-sand) 100%);
+  overflow: hidden;
+}
+
+/* === Decorative Elements === */
+
+.decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.omSymbol {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  font-size: 200px;
+  opacity: 0.03;
+  font-family: var(--font-display);
+  color: var(--color-ink);
+  transform: rotate(15deg);
+}
+
+.diyal {
+  position: absolute;
+  top: 120px;
+  left: -30px;
+  opacity: 0.15;
+}
+
+.flame {
+  font-size: 60px;
+  filter: blur(1px);
+  animation: flicker 2s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255, 107, 53, 0.03) 20px,
+    rgba(255, 107, 53, 0.03) 40px
+  );
+}
+
+/* === Header === */
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5);
+  padding-top: max(var(--space-5), env(safe-area-inset-top));
+}
+
+.backBtn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-sand-dark);
+  border-radius: var(--radius-full);
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.backBtn:hover {
+  background: var(--color-sand-dark);
+  border-color: var(--color-flame);
+}
+
+/* === Progress Indicator === */
+
+.progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stepText {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-mist);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.dots {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-sand-dark);
+  border-radius: 50%;
+  transition: all var(--transition-base);
+}
+
+.dotActive {
+  background: var(--color-flame);
+  width: 24px;
+  border-radius: var(--radius-full);
+}
+
+/* === Language Toggle === */
+
+.langToggle {
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-sand-dark);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.langToggle:hover {
+  border-color: var(--color-flame);
+  color: var(--color-flame);
+}
+
+/* === Content === */
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-6);
+  max-width: 480px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* === Footer === */
+
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-4);
+  padding-bottom: max(var(--space-4), env(safe-area-inset-bottom));
+  text-align: center;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(74, 124, 89, 0.1);
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  color: var(--color-leaf);
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .content {
+    padding: var(--space-8);
+  }
+
+  .omSymbol {
+    font-size: 300px;
+  }
+
+  .diyal {
+    top: 150px;
+  }
+}

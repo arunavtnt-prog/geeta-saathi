@@ -1,0 +1,113 @@
+/**
+ * NameScreen Styles
+ * Large, accessible inputs for name entry
+ */
+
+.greeting {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-flame);
+  text-align: center;
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--color-ink-muted);
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+/* === Form === */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-ink);
+  padding-left: var(--space-1);
+}
+
+.input {
+  height: 56px;
+  padding: 0 var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+  background: var(--color-surface-elevated);
+  border: 2px solid var(--color-sand-dark);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.input::placeholder {
+  color: var(--color-mist);
+}
+
+.input:focus {
+  border-color: var(--color-flame);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+}
+
+/* === CTA === */
+
+.cta {
+  margin-bottom: var(--space-4);
+}
+
+/* === Skip === */
+
+.skip {
+  width: 100%;
+  padding: var(--space-3);
+  background: transparent;
+  border: none;
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  cursor: pointer;
+  transition: color var(--transition-base);
+}
+
+.skip:hover {
+  color: var(--color-flame);
+}
+
+/* === Responsive === */
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--text-4xl);
+  }
+
+  .subtitle {
+    font-size: var(--text-xl);
+  }
+
+  .input {
+    height: 64px;
+    font-size: var(--text-xl);
+  }
+}
