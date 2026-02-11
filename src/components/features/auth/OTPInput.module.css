@@ -5,17 +5,17 @@
 
 .otpContainer {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .otpInput {
-  width: 52px;
-  height: 64px;
+  width: 48px;
+  height: 56px;
   text-align: center;
   font-family: var(--font-display);
-  font-size: var(--text-3xl);
+  font-size: var(--text-2xl);
   font-weight: 600;
   color: var(--color-ink);
   background: var(--color-surface-elevated);
@@ -24,6 +24,7 @@
   outline: none;
   transition: all var(--transition-base);
   caret-color: var(--color-flame);
+  flex-shrink: 0;
 }
 
 .otpInput:focus {
@@ -75,10 +76,17 @@
 
 /* === Responsive === */
 
+@media (min-width: 480px) {
+  .otpInput {
+    width: 52px;
+    height: 64px;
+    font-size: var(--text-3xl);
+  }
+}
+
 @media (min-width: 768px) {
   .otpInput {
-    width: 60px;
-    height: 72px;
-    font-size: var(--text-4xl);
+    width: 56px;
+    height: 68px;
   }
 }
